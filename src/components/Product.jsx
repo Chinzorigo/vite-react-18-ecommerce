@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Product(props) {
   const product = props.product;
   return (
@@ -7,9 +9,11 @@ function Product(props) {
           <div className="hover-content">
             <ul>
               <li>
-                <a href="single-product.html">
+                {/* <a href="single-product.html"> */}
+                <Link to={"/product/" + product.id}>
                   <i className="fa fa-eye"></i>
-                </a>
+                </Link>
+                {/* </a> */}
               </li>
               <li>
                 <a href="single-product.html">
