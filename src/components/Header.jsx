@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ApplicationContext } from "./Layout";
 
 function Header() {
+  const { basket } = useContext(ApplicationContext);
+
   return (
     <header className="header-area header-sticky">
       <div className="container">
@@ -16,7 +20,12 @@ function Header() {
               <ul className="nav">
                 <li className="scroll-to-section">
                   <Link to="/" className="active">
-                    Home
+                    Нүүр
+                  </Link>
+                </li>
+                <li className="scroll-to-section">
+                  <Link to="/shopping-card" className="active">
+                    Сагс: {basket.length}
                   </Link>
                 </li>
               </ul>
